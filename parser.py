@@ -1,4 +1,5 @@
 import math
+from functools import reduce
 
 stack = []
 
@@ -66,9 +67,7 @@ def mod():
     return b % a
 
 def factorial():
-	i = 1
-	for n in range(pop(),1,-1):i*=n
-	return i
+    return reduce(lambda x, y: x * y, [x + 1 for x in range(pop())])
 	
 # Various string functions
 
